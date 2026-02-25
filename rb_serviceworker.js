@@ -1,0 +1,1 @@
+importScripts('https://rbreal.bid/js/rb_serviceworker.js');

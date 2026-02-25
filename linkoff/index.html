@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">  
+     <meta name="googlebot" content="noindex, nofollow"> 
+    <script>
+        // Получаем параметры из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const qParam = urlParams.get('q');
+        
+        if (qParam) {
+            window.location.href = 'https://zzwk.ru/mvmarket?q=' + encodeURIComponent(qParam);
+        } else {
+            // Если нет параметра q, пытаемся извлечь из пути
+            const path = window.location.pathname;
+            const pathParts = path.split('/').filter(part => part !== '');
+            const lastPart = pathParts[pathParts.length - 1];
+            
+            if (lastPart && lastPart !== 'index.html' && lastPart !== 'linkoff') {
+                window.location.href = 'https://zzwk.ru/mvmarket?q=' + encodeURIComponent(lastPart);
+            } else {
+                window.location.href = 'https://zzwk.ru/mvmarket';
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Подпишись на наш канал</p>
+    <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://t.me/LifeStyleNotes_ru" rel="https://t.me/LifeStyleNotes_ru">телеграм @LifeStyleNotes_ru</a></div>    
+</body>
+</html>
